@@ -1,12 +1,9 @@
 
-import React, { useEffect, useState } from 'react';
-// import LogoImage from '../../../../public/unibazar-logo.png';
-import { useDispatch, useSelector } from 'react-redux';
-// import { loadUser } from '@/redux/slice/userSlice';
+import React, {useState } from 'react';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import styles from './AppNavbar.module.css';
-// import ProfileIcon from "../ProfileIcon/ProfileIcon";
+import { Link } from 'react-router-dom';
 
 function AppNavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,23 +29,23 @@ function AppNavBar() {
     setIsOpen(!isOpen);
   };
 
-  const { user, isLoading, error } = useSelector((state) => state.user);
-  const dispatch = useDispatch();
+  // const { user, isLoading, error } = useSelector((state) => state.user);
+  // const dispatch = useDispatch();
 
 
-  const handleLogout = () => {
+  // const handleLogout = () => {
 
-    localStorage.removeItem('jwtToken');
-    setSnackbarMessage('user logged out successfully!');
-    setSnackbarSeverity('success');
-    setSnackbarOpen(true);
+  //   localStorage.removeItem('jwtToken');
+  //   setSnackbarMessage('user logged out successfully!');
+  //   setSnackbarSeverity('success');
+  //   setSnackbarOpen(true);
 
-    dispatch(loadUser());
+  //   dispatch(loadUser());
 
-  }
+  // }
 
-  const pathname = usePathname();
-  const isActive = href => pathname === href;
+  // const pathname = usePathname();
+  const isActive = href => "/" === href;
 
   return (
     <>
@@ -58,40 +55,40 @@ function AppNavBar() {
         </MuiAlert>
       </Snackbar>
       <nav className={styles.navbarContainer}>
-        <Link href="/" className={styles.logoWrap}>
-          <Image src={LogoImage} alt="logo" className={styles.navbarLogo}></Image>
+        <Link to="/" className={styles.logoWrap}>
+          <img src="../../../../images/unibazar-logo.png" alt="logo" className={styles.navbarLogo}></img>
         </Link>
 
         <div className="hidden md:flex space-x-6 text-gray-600">
           <ul className={styles.navLinksUl}>
             <li className={styles.navLinkItem}>
-              <Link onClick={closeSnackbar} href="/" className={isActive('/') ? ' text-teal-500' : 'text-gray-600'}>
+              <Link onClick={closeSnackbar} to="/" className={isActive('/') ? ' text-teal-500' : 'text-gray-600'}>
                 <span>Home</span>
               </Link>
             </li>
             <li className={styles.navLinkItem}>
-              <Link onClick={closeSnackbar} href="/about-us" className={isActive('/about-us') ? ' text-teal-500' : 'text-gray-600'}>
+              <Link onClick={closeSnackbar} to="/about-us" className={isActive('/about-us') ? ' text-teal-500' : 'text-gray-600'}>
                 About
               </Link>
             </li>
             <li className={styles.navLinkItem}>
-              <Link onClick={closeSnackbar} href="/features" className={isActive('/features') ? ' text-teal-500' : 'text-gray-600'}>
+              <Link onClick={closeSnackbar} to="/features" className={isActive('/features') ? ' text-teal-500' : 'text-gray-600'}>
                 Features
               </Link>
             </li>
             <li className={styles.navLinkItem}>
-              <Link onClick={closeSnackbar} href="/pricing" className={isActive('/pricing') ? ' text-teal-500' : 'text-gray-600'}>
+              <Link onClick={closeSnackbar} to="/pricing" className={isActive('/pricing') ? ' text-teal-500' : 'text-gray-600'}>
                 Pricing
               </Link>
             </li>
             <li className={styles.navLinkItem}>
-              <Link onClick={closeSnackbar} href="/contact-us" className={isActive('/contact-us') ? ' text-teal-500' : 'text-gray-600'}>
+              <Link onClick={closeSnackbar} to="/contact-us" className={isActive('/contact-us') ? ' text-teal-500' : 'text-gray-600'}>
                 Contact us
               </Link>
             </li>
           </ul>
         </div>
-        {
+        {/* {
           user ? (
             <div className='flex flex-row gap-2 justify-center items-center'>
               <ProfileIcon />
@@ -106,16 +103,16 @@ function AppNavBar() {
                 Register
               </Link>
             </div>
-        }
+        } */}
 
 
-        {!user && <div className="md:hidden flex items-center">
+        {/* {!user && <div className="md:hidden flex items-center">
           <button onClick={toggleMenu} className="text-gray-600 hover:text-teal-700 focus:outline-none">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}></path>
             </svg>
           </button>
-        </div>}
+        </div>} */}
 
         {isOpen && (
           <div className="md:hidden absolute top-16 left-0 w-full bg-white shadow-md">

@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
-import { customTheme } from '../../theme/CustomTheme';
+import { customTheme } from '../../../theme/CustomTheme';
 import CircularProgress from '@mui/material/CircularProgress';
 
 const CustomButton = ({
