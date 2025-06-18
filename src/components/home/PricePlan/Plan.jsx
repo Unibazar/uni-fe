@@ -1,7 +1,7 @@
-import TickImg from "../../assets/unibazar-pricing-images/tick.png";
+import TickImg from "../../../assets/unibazar-pricing-images/tick.png";
 import {Link} from "react-router-dom";
 import { Card, CardContent, CardHeader } from "@mui/material";
-import CustomButton from "../@base/customButton/customButton";
+import CustomButton from "../../@base/customButton/customButton";
 
 export default function Plans({ pricingType }) {
     const selectedPlan = "Free";

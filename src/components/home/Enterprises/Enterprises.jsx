@@ -1,11 +1,11 @@
-import FlipkartLogo from '../../assets/unibazar-home-images/flipkart-logo.svg';
-import AmazoneLogo from '../../assets/unibazar-home-images/amazon-logo.svg';
-import ShopifyLogo from '../../assets/unibazar-home-images/shopify-logo.svg';
-import MyntraLogo from '../../assets/unibazar-home-images/myntra-logo.svg';
-import SnapdealLogo from '../../assets/unibazar-home-images/snapdeal-logo.svg';
-import NykaaLogo from '../../assets/unibazar-home-images/nykaa-logo.svg';
-import LimeRoadLogo from '../../assets/unibazar-home-images/limeRoad-logo.svg';
-import AjioLogo from '../../assets/unibazar-home-images/ajio-logo.svg';
+import FlipkartLogo from '../../../assets/unibazar-home-images/flipkart-logo.svg';
+import AmazoneLogo from '../../../assets/unibazar-home-images/amazon-logo.svg';
+import ShopifyLogo from '../../../assets/unibazar-home-images/shopify-logo.svg';
+import MyntraLogo from '../../../assets/unibazar-home-images/myntra-logo.svg';
+import SnapdealLogo from '../../../assets/unibazar-home-images/snapdeal-logo.svg';
+import NykaaLogo from '../../../assets/unibazar-home-images/nykaa-logo.svg';
+import LimeRoadLogo from '../../../assets/unibazar-home-images/limeRoad-logo.svg';
+import AjioLogo from '../../../assets/unibazar-home-images/ajio-logo.svg';
 
 const Enterprises = () => {
   return (
