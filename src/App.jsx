@@ -3,6 +3,7 @@ import Footer from './components/widgets/AppFooter/Footer';
 import Home from './Home';
 import { Route, Routes } from 'react-router-dom';
 import AboutUs from './AboutUS';
+import Features from './Features';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUs/>} />
+        <Route path="/features" element={<Features/>} />
       </Routes>
 
       <Footer />
