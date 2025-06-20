@@ -1,5 +1,5 @@
 // import React, { useEffect } from 'react';
-import SignupImage from '../../../../assets/unibazar-contactus-images/signup-img.svg';
+import SignupImage from '../../../assets/unibazar-contactus-images/signup-img.svg';
 
 // import { loadUser } from '@/redux/slice/userSlice';
 // import { useDispatch, useSelector } from 'react-redux';

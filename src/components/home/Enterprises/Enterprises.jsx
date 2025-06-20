@@ -10,7 +10,7 @@ import AjioLogo from '../../../assets/unibazar-home-images/ajio-logo.svg';
 const Enterprises = () => {
   return (
     <>
-      <div className='mt-10'>
+      <div className='py-20'>
         <div>
           <h2 className='text-center text-3xl font-semibold'>Trusted by Leading Indian Enterprises</h2>
           <p className='text-center mb-7 text-sm mt-4 opacity-60'>We are delighted to share that our resort is now prominently featured in the updated media gallery</p>
