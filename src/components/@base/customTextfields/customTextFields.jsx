@@ -1,6 +1,6 @@
 import { TextField } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
-import { customTheme } from '../../theme/CustomTheme';
+import { customTheme } from '../../../theme/CustomTheme';
 
 const CustomTextField = (props) => {
   // Remove asterisk from label if it exists
