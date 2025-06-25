@@ -7,7 +7,7 @@ import Bgcircle1 from '../../assets/unibazar-contactus-images/bgCircle/Ellipse 7
 import Bgcircle2 from '../../assets/unibazar-contactus-images/bgCircle/Ellipse 794.png'
 import { FaInstagram } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import { Faaedin } from 'react-icons/fa';
+import { FaLinkedin  } from 'react-icons/fa';
 import { FaFacebook } from 'react-icons/fa';
 const Contactinfo = () => {
   return (
@@ -66,7 +66,7 @@ const Contactinfo = () => {
           
           <a href="https://www.aedin.com/company/unibazar-in/" passHref>
             
-              <Faaedin className="text-2xl hover:text-teal-800" />
+              <FaLinkedin  className="text-2xl hover:text-teal-800" />
           
           </a>
         </div>
