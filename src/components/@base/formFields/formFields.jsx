@@ -12,8 +12,8 @@ import {
   FormHelperText
 } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
-import { customTheme } from '../../theme/CustomTheme';
-import CustomTextField from '../CustomTextField/CustomTextField';
+import { customTheme } from '../../../theme/CustomTheme';
+import CustomTextField from '../customTextfields/customTextFields';
 
 const FormField = ({
   type = 'text',

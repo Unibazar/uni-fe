@@ -1,4 +1,4 @@
-import Plans from "../../../../pricing/ChoosePlan/Plans";
+import Plans from "../../../../components/pricing/Plan";
 
 
 export default function SubscriptionPlan() {

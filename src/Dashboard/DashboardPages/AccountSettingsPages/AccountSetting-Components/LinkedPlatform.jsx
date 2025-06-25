@@ -1,10 +1,9 @@
-import Image from 'next/image';
-import amazonLogo from '../../../../../assets/unibazar-home-images/amazon-logo.png';
-import flipkartLogo from '../../../../../assets/unibazar-home-images/flipkart-logo.png';
-import myntraLogo from '../../../../../assets/unibazar-home-images/myntra-full-logo.png';
+import amazonLogo from '../../../../assets/unibazar-home-images/amazon-logo.png';
+import flipkartLogo from '../../../../assets/unibazar-home-images/flipkart-logo.png';
+import myntraLogo from '../../../../assets/unibazar-home-images/myntra-full-logo.png';
 import { Checkbox, FormControlLabel, TextField } from '@mui/material';
 import { FaLink } from 'react-icons/fa';
-import CustomButton from '@/baseComponents/CustomButton/CustomButton';
+import CustomButton from '../../../../components/@base/customButton/customButton';
 
 export default function LinkedPlatform() {
   return (
@@ -12,13 +11,13 @@ export default function LinkedPlatform() {
       {/* platform Logos */}
       <div className="flex gap-4 w-full items-center flex-wrap">
         <div className="w-32">
-          <Image src={amazonLogo} width="auto" height="auto" alt="amazon logo" className="object-contain w-full h-full" />
+          <img src={amazonLogo} width="auto" height="auto" alt="amazon logo" className="object-contain w-full h-full" />
         </div>
         <div className="w-32">
-          <Image src={flipkartLogo} width="auto" height="auto" alt="flipkart logo" className="object-contain w-full h-full" />
+          <img src={flipkartLogo} width="auto" height="auto" alt="flipkart logo" className="object-contain w-full h-full" />
         </div>
         <div className="w-32">
-          <Image src={myntraLogo} width="auto" height="auto" alt="myntra logo" className="object-contain w-full h-full" />
+          <img src={myntraLogo} width="auto" height="auto" alt="myntra logo" className="object-contain w-full h-full" />
         </div>
       </div>
 

@@ -1,4 +1,3 @@
-'use client'
 import { IoIosArrowDown } from "react-icons/io";
 import Personalinformation from "./AccountSetting-Components/Personalinformation";
 import BusinessInformation from "./AccountSetting-Components/BusinessInformation";
@@ -8,7 +7,7 @@ import Accordion from '@mui/material/Accordion';
 import { styled } from '@mui/material/styles';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
-import { useSearchParams } from "next/navigation";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
@@ -27,7 +26,7 @@ const CustomAccordion = styled(Accordion)(() => {
 
 
 export default function AccountSettings() {
-  const searchParams = useSearchParams();
+  const searchParams = useParams();
   const query = searchParams.get('q');
   const userInformation = useSelector(state => state?.user?.user?.user);
   console.log(userInformation,"userInformation")
@@ -55,19 +54,19 @@ export default function AccountSettings() {
 
 
       {/* personal information  */}
-      <CustomAccordion className="w-full flex-col text-sm md:text-2xl" expanded={expanded} onChange={handleAccordionChange}>
+      {/* <CustomAccordion className="w-full flex-col text-sm md:text-2xl" expanded={expanded} onChange={handleAccordionChange}>
         <AccordionSummary expandIcon={<IoIosArrowDown />} >
           <p className="w-full font-semibold text-left capitalize">personal information</p>
         </AccordionSummary>
         <AccordionDetails className="text-sm md:text-xl">
           <Personalinformation />
         </AccordionDetails>
-      </CustomAccordion>
+      </CustomAccordion> */}
 
 
 
       {/* business information  */}
-      <CustomAccordion className="w-full flex-col text-sm md:text-2xl">
+      {/* <CustomAccordion className="w-full flex-col text-sm md:text-2xl">
         <AccordionSummary expandIcon={<IoIosArrowDown />} >
           <p className="w-full font-semibold text-left capitalize">business information</p>
         </AccordionSummary>
@@ -75,19 +74,19 @@ export default function AccountSettings() {
           <BusinessInformation 
           />
         </AccordionDetails>
-      </CustomAccordion>
+      </CustomAccordion> */}
       
 
 
       {/* subscription plan  */}
-      <CustomAccordion className="w-full flex-col text-sm md:text-2xl">
+      {/* <CustomAccordion className="w-full flex-col text-sm md:text-2xl">
         <AccordionSummary expandIcon={<IoIosArrowDown />} >
           <p className="w-full font-semibold text-left capitalize">subscription plan</p>
         </AccordionSummary>
         <AccordionDetails className="text-sm md:text-xl">
           <SubscriptionPlan />
         </AccordionDetails>
-      </CustomAccordion>
+      </CustomAccordion> */}
 
 
       {/* linked platforms 

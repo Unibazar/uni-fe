@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import DashboardNavbar from "../Layout-Components/DashboardNavbar";
 import DashboardSidebar from "../Layout-Components/DashboardSidebar";
 import styles from "../dashboard.module.css";
+import { Outlet } from "react-router-dom";
 // import { useRouter } from "next/router";
 // import { useSelector } from "react-redux";
 
 
-export default function DashboardLayout({ children }) {
+export default function DashboardLayout() {
   const [showSidebar, setShowSidebar] = useState(true);
   // const router = useRouter();
   // const { user } = useSelector(state => state.user);
@@ -51,7 +52,7 @@ export default function DashboardLayout({ children }) {
         <div className={`main-content overflow-y-scroll ease-linear duration-200 w-full ${styles.mainContainer}`}>
           <DashboardNavbar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
           <div className="bg-zinc-100 min-h-full">
-            {children}
+            <Outlet/>
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ import Pricing from './Pricing';
 import ContactUs from './ContactUs';
 import Dashboard from './Dashboard/Pages';
 import DashboardLayout from './Dashboard/Pages/layout';
+import AccountSettings from './Dashboard/DashboardPages/AccountSettingsPages/AccountSettings';
 
 function App() {
   const location = useLocation();
@@ -24,7 +25,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<Dashboard />} />
-          
+          <Route path="accountsettings" element={<AccountSettings/>} />
         </Route>
       </Routes>
       {!isDashboardRoute && <Footer />}
