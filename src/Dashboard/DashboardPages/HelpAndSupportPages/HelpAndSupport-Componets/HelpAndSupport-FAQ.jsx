@@ -1,5 +1,4 @@
-'use client';
-import FAQAccordion from '../../../../../components/widgets/common/FAQAccordion';
+import FAQAccordion from '../../../../components/widgets/FAQ/FAQAccordion';
 
 
 const HelpAndSupportFAQ = () => {

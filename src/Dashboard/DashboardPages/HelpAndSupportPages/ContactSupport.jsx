@@ -1,4 +1,3 @@
-'use client';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
@@ -9,8 +8,8 @@ import UserForm from './HelpAndSupport-Componets/UserForm';
 import LiveChat from './HelpAndSupport-Componets/LiveChat';
 import HelpAndSupportFAQ from './HelpAndSupport-Componets/HelpAndSupport-FAQ';
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
-import { customTheme } from '@/theme/CustomTheme';
-import ContactInput from '@/components/contact-us/ContactDetails/ContactInput/ContactInput';
+import { customTheme } from '../../../theme/CustomTheme';
+import ContactInput from '../../../components/contact-us/ContactInput';
 
 export default function ContactSupport() {
   const [value, setValue] = useState('contactSupport');

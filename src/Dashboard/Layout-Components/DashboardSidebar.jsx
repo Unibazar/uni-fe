@@ -15,7 +15,7 @@ export default function DashboardSidebar({setShowSidebar}) {
             title: "Dashboard",
             to:"/dashboard",
             icon: IoMdTimer,
-            subLinks:[{title:"Overview" , to:"/dashboard/overview"},{title:"Total sales" , to:"/dashboard/totalsales"} ,{title:"Active Listings" , to:"/dashboard/activelisting"}, {title:"Link Account" , to:"/dashboard/linkaccount"}]
+            subLinks:[{title:"Overview" , to:"/dashboard/overview"}, {title:"Link Account" , to:"/dashboard/linkaccount"}]
         },
         {
             title: "Products",

@@ -4,12 +4,14 @@ import TickImg from "../../assets/unibazar-pricing-images/tick.png";
 // import { loadUser, updateUser } from "@/redux/slice/userSlice";
 import { Card, CardContent, CardHeader } from "@mui/material";
 import CustomButton from "../@base/customButton/customButton";
+import { Link } from "react-router-dom";
 
 export default function Plans({ pricingType }) {
 //   const dispatch = useDispatch();
 //   const user = useSelector((state) => state.user.user);
 //   // console.log(user?.user?.subscriptionPlan?.planName,"user plan")
-//   const selectedPlan = user?.user?.subscriptionPlan?.planName; // Get selected plan from user data
+  // const selectedPlan = user?.user?.subscriptionPlan?.planName; // Get selected plan from user data
+  const selectedPlan ="basic"; // Get selected plan from user data
 //   // console.log(selectedPlan,"selected")
 
 //   useEffect(() => {
@@ -78,7 +80,7 @@ export default function Plans({ pricingType }) {
                   {plan.name}
                 </p>
                 {selectedPlan === plan.name.toLowerCase() && (
-                  <Image src={TickImg} alt="Selected" className="w-5 h-5" />
+                  <img src={TickImg} alt="Selected" className="w-5 h-5" />
                 )}
               </div>
             }
@@ -94,7 +96,7 @@ export default function Plans({ pricingType }) {
             <div className="mt-4 space-y-2">
               {plan.features.map((feature, i) => (
                 <div key={i} className="flex text-left gap-2">
-                  <Image src={TickImg} alt="Feature" className="w-4 h-4" />
+                  <img src={TickImg} alt="Feature" className="w-4 h-4" />
                   <p className="text-base text-gray-500">{feature}</p>
                 </div>
               ))}
@@ -103,7 +105,7 @@ export default function Plans({ pricingType }) {
             {/* Plan Selection Button */}
             <div className="mt-6">
               {plan.name === "Enterprise" ? (
-                <Link href="/contact-us">
+                <Link to="/contact-us">
                   <CustomButton fullWidth className="primary">
                     Contact Us
                   </CustomButton>

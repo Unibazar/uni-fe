@@ -5,7 +5,8 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import styles from "../dashboard.module.css"
 
 export default function Tags({ title, icon: Icon, subLinks ,to  , setShowSidebar}) {
-    const path = useLocation();
+    const location = useLocation();
+    const path = location.pathname;
     const CommingPath = to?.split('?')[0];
      
     const [toggleLinks, setToggleLinks] = useState(false);
@@ -29,7 +30,7 @@ export default function Tags({ title, icon: Icon, subLinks ,to  , setShowSidebar
 
     return (
         <div className='group'>
-            <div className={`links px-4 py-1 group-hover:border-opacity-100 border-l-4 border-opacity-0 border-[#65B2B2] ${path==CommingPath && styles.activeLink}`}>
+            <div className={`links px-4 py-1 group-hover:border-[#65B2B2] border-l-4 border-[#65B2B2]/0 ${path==CommingPath && styles.activeLink}`}>
                 <Link to={`${to || "#"}`}  onClick={handleToggleLinks} className='p-2 w-full rounded-lg group-hover:bg-zinc-200 cursor-pointer flex items-center gap-4'>
                     <Icon/>
                     <h1 className='text-sm lg:text-lg'>{title}</h1>

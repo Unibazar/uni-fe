@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from "@mui/material";
 
 function BusinessInformationForm() {
-  const dispatch = useDispatch();
-  const userId = useSelector((state) => state?.user?.user?.user?._id);
-  const businessInfo = useSelector((state) => state?.user?.user?.businessInfo);
+  // const dispatch = useDispatch();
+  // const userId = useSelector((state) => state?.user?.user?.user?._id);
+  // const businessInfo = useSelector((state) => state?.user?.user?.businessInfo);
   const [popup, setPopup] = useState({ visible: false, message: "", type: "" });
 
   const { control, handleSubmit, setValue } = useForm({
@@ -21,18 +21,18 @@ function BusinessInformationForm() {
   });
 
   // ✅ Load existing business info when component mounts
-  useEffect(() => {
-    dispatch(loadUser()).then((data) => {
-      const userBusinessInfo = data?.payload?.user?.businessInfo;
-      if (userBusinessInfo) {
-        setValue("businessName", userBusinessInfo.businessName || "");
-        setValue("productCategory", userBusinessInfo.productCategory || "");
-        setValue("businessContact", userBusinessInfo.businessContact || "");
-        setValue("website", userBusinessInfo.website || "");
-        setValue("gst", userBusinessInfo.gst || "");
-      }
-    });
-  }, [dispatch, setValue]);
+  // useEffect(() => {
+  //   dispatch(loadUser()).then((data) => {
+  //     const userBusinessInfo = data?.payload?.user?.businessInfo;
+  //     if (userBusinessInfo) {
+  //       setValue("businessName", userBusinessInfo.businessName || "");
+  //       setValue("productCategory", userBusinessInfo.productCategory || "");
+  //       setValue("businessContact", userBusinessInfo.businessContact || "");
+  //       setValue("website", userBusinessInfo.website || "");
+  //       setValue("gst", userBusinessInfo.gst || "");
+  //     }
+  //   });
+  // }, [dispatch, setValue]);
 
   // ✅ Handle form submission
   const onSubmit = (data) => {
@@ -45,25 +45,25 @@ function BusinessInformationForm() {
       gst: data.gst,
     };
 
-    dispatch(updateUser(formData))
-      .then((result) => {
-        if (updateUser.fulfilled.match(result)) {
-        const user = result.payload.user;
+    // dispatch(updateUser(formData))
+    //   .then((result) => {
+    //     if (updateUser.fulfilled.match(result)) {
+    //     const user = result.payload.user;
 
-          setPopup({
-            visible: true,
-            message: `Hi ${user.personalInfo?.name}, your Business information updated successfully!`,
-            type: "success",
-          });
-          // alert("Business information updated successfully!");
-          dispatch(loadUser()); // ✅ Refresh user data
-        } else {
-          alert("Failed to update business information.");
-        }
-      })
-      .catch(() => {
-        alert("An error occurred while updating business information.");
-      });
+    //       setPopup({
+    //         visible: true,
+    //         message: `Hi ${user.personalInfo?.name}, your Business information updated successfully!`,
+    //         type: "success",
+    //       });
+    //       // alert("Business information updated successfully!");
+    //       dispatch(loadUser()); // ✅ Refresh user data
+    //     } else {
+    //       alert("Failed to update business information.");
+    //     }
+    //   })
+    //   .catch(() => {
+    //     alert("An error occurred while updating business information.");
+    //   });
   };
 
 

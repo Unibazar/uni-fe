@@ -1,5 +1,5 @@
 .activeLink{
-    --tw-border-opacity:1;
+    border-color:#65B2B2;
 }
 
 .activeLink>a{

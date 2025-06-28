@@ -8,9 +8,9 @@ import CustomButton from "../../../../components/@base/customButton/customButton
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button } from "@mui/material"; // Material-UI components
 
 export default function PersonalInformation() {
-  const dispatch = useDispatch();
-  const personalInfoFromStore = useSelector((state) => state.personalInfo.info);
-  const userId = useSelector((state) => state?.user?.user?.user?._id);
+  // const dispatch = useDispatch();
+  // const personalInfoFromStore = useSelector((state) => state.personalInfo.info);
+  // const userId = useSelector((state) => state?.user?.user?.user?._id);
 
   const [userPhotoSrc, setUserPhotoSrc] = useState("");
   const [userPhoto, setUserPhoto] = useState();
@@ -28,26 +28,26 @@ export default function PersonalInformation() {
   const [popup, setPopup] = useState({ visible: false, message: "", type: "" });
   // const userId = useSelector((state) => state?.user?.user?.user?._id)
 
-  useEffect(() => {
-    dispatch(loadUser()).then((data) => {
-      const user = data?.payload?.user;
-      const personalInfo = data?.payload?.user?.personalInfo;
-      setPersonalData({
-        name: user?.name,
-        email: user?.email,
-        phone: personalInfo?.phone,
-        location: personalInfo?.location,
-        logo: null,
-        description: personalInfo?.description,
-      });
-    });
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(loadUser()).then((data) => {
+  //     const user = data?.payload?.user;
+  //     const personalInfo = data?.payload?.user?.personalInfo;
+  //     setPersonalData({
+  //       name: user?.name,
+  //       email: user?.email,
+  //       phone: personalInfo?.phone,
+  //       location: personalInfo?.location,
+  //       logo: null,
+  //       description: personalInfo?.description,
+  //     });
+  //   });
+  // }, [dispatch]);
 
-  useEffect(() => {
-    if (personalInfoFromStore) {
-      setPersonalData(personalInfoFromStore);
-    }
-  }, [personalInfoFromStore]);
+  // useEffect(() => {
+  //   if (personalInfoFromStore) {
+  //     setPersonalData(personalInfoFromStore);
+  //   }
+  // }, [personalInfoFromStore]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -60,58 +60,58 @@ const handleSubmit = async (e) => {
 
  
   // Dispatch the updateUser thunk with FormData
-  dispatch(updateUser({
-    name:personalData?.name,
-    email:personalData?.email,
-    phone:personalData?.phone,
-    location:personalData?.location,
-    description:personalData?.description,
-    id:userId,
-    profilePic:userPhoto
-  }))
-    .then((result) => {
-      if (updateUser.fulfilled.match(result)) {
-        // Success case
-        const user = result.payload.user;
+  // dispatch(updateUser({
+  //   name:personalData?.name,
+  //   email:personalData?.email,
+  //   phone:personalData?.phone,
+  //   location:personalData?.location,
+  //   description:personalData?.description,
+  //   id:userId,
+  //   profilePic:userPhoto
+  // }))
+  //   .then((result) => {
+  //     if (updateUser.fulfilled.match(result)) {
+  //       // Success case
+  //       const user = result.payload.user;
        
-        setPopup({
-          visible: true,
-          message: `Hi ${user.personalInfo?.name}, your personal information has been updated!`,
-          type: "success",
-        });
-        dispatch(loadUser());
-        // Update local state with the new user data
-        setPersonalData({
-          name: user.personalInfo?.name || "",
-          email: user.email || "",
-          number: user.personalInfo?.phone || "",
-          address: user.personalInfo?.location || "",
-          description: user.personalInfo?.description || "",
-          logo: user.personalInfo?.profilePic || null,
-        });
+  //       setPopup({
+  //         visible: true,
+  //         message: `Hi ${user.personalInfo?.name}, your personal information has been updated!`,
+  //         type: "success",
+  //       });
+  //       dispatch(loadUser());
+  //       // Update local state with the new user data
+  //       setPersonalData({
+  //         name: user.personalInfo?.name || "",
+  //         email: user.email || "",
+  //         number: user.personalInfo?.phone || "",
+  //         address: user.personalInfo?.location || "",
+  //         description: user.personalInfo?.description || "",
+  //         logo: user.personalInfo?.profilePic || null,
+  //       });
 
-        if (user.personalInfo?.profilePic) {
-          setUserPhotoSrc(user.personalInfo.profilePic);
-        }
-      } else if (updateUser.rejected.match(result)) {
-        // Error case
-        // setPopup({
-        //   visible: true,
-        //   message: result.payload || "Failed to update personal information",
-        //   type: "error",
-        // });
-        console.log(result,"result")
-      }
-    })
-    .catch((error) => {
-      // Handle unexpected errors
-      // setPopup({
-      //   visible: true,
-      //   message: "An error occurred while updating personal information",
-      //   type: "error",
-      // });
-      // console.log(error,"error")
-    });
+  //       if (user.personalInfo?.profilePic) {
+  //         setUserPhotoSrc(user.personalInfo.profilePic);
+  //       }
+  //     } else if (updateUser.rejected.match(result)) {
+  //       // Error case
+  //       // setPopup({
+  //       //   visible: true,
+  //       //   message: result.payload || "Failed to update personal information",
+  //       //   type: "error",
+  //       // });
+  //       console.log(result,"result")
+  //     }
+  //   })
+  //   .catch((error) => {
+  //     // Handle unexpected errors
+  //     // setPopup({
+  //     //   visible: true,
+  //     //   message: "An error occurred while updating personal information",
+  //     //   type: "error",
+  //     // });
+  //     // console.log(error,"error")
+  //   });
 };
   const handleClosePopup = () => {
     setPopup({ ...popup, visible: false });
