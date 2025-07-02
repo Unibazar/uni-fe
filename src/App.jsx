@@ -13,15 +13,26 @@ import ContactSupport from './Dashboard/DashboardPages/HelpAndSupportPages/Conta
 import Analytics from './Dashboard/DashboardPages/HelpAndSupportPages/Analytics/Analytics';
 import OrderListPage from './Dashboard/DashboardPages/OrderPages/OrderListPage';
 import Overview from './Dashboard/DashboardPages/Overview/Overview';
+import Register from './Register';
+import Resetpass from './Resetpassword';
+import Forgotpass from './Forgotpassword';
 
 function App() {
   const location = useLocation();
   const isDashboardRoute = location.pathname.startsWith('/dashboard');
+  const isAuthRoute = location.pathname.startsWith('/auth')
 
   return (
     <>
-      {!isDashboardRoute && <AppNavBar />}
+      {!isDashboardRoute && !isAuthRoute && <AppNavBar />}
       <Routes>
+        <Route path="/auth" element={<AuthLayout/>}>
+          <Route index element={<Login/>} />
+          <Route path='register' element={<Register />} />
+          <Route path='resetPassword' element={<Resetpass />} />
+          <Route path='forgotPassword' element={<Forgotpass />} />
+          <Route path='otp' element={<Otp />} />
+        </Route>
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/features" element={<Features />} />
@@ -37,7 +48,7 @@ function App() {
           <Route path="helpandsupport" element={<ContactSupport/>} />
         </Route>
       </Routes>
-      {!isDashboardRoute && <Footer />}
+      {!isDashboardRoute && !isAuthRoute && <Footer />}
     </>
   )
 }
